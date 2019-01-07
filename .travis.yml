@@ -1,0 +1,15 @@
+dist: xenial
+matrix:
+  include:
+    - name: server test
+      language: node_js
+      node_js: "10"
+      before_install:
+        - java --version
+      install:
+        - npm install
+      script:
+        - npm run test:ci
+
+cache:
+  npm: true
